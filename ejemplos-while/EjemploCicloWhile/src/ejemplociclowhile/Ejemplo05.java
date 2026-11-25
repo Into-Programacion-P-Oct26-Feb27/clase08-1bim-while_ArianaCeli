@@ -1,4 +1,5 @@
-/*
+8
+999/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -29,6 +30,8 @@ public class Ejemplo05 {
 
         double promedio_final;
         double calificacion;
+        String cadena_final = "Las notas ingresadas son:\n";
+
 
         System.out.println("Ingrese las notas de los estudiantes de su "
                 + "materia");
@@ -41,10 +44,18 @@ public class Ejemplo05 {
             // contador
             contador = contador + 1;
         }
+        cadena_final = String.format("%sLa suma de notas es: %.1f\n",
+                cadena_final, suma_total);
 
         promedio_final = suma_total / limite;
-
-        System.out.printf("El promedio final es %f\n", promedio_final);
+        
+        //System.out.printf("El promedio final es %f\n", promedio_final);
+        System.out.printf("%s\n", cadena_final);
+        
+        
 
     }
 }
+/*
+sirve como acumulador de texto que va construyendo todo el mensaje final poco a poco, antes de mostrarlo de una sola vez en la pantalla.
+*/

@@ -1,31 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ejemplociclowhile;
 
-/**
- *
- * @author SALASC
- */
+import java.util.Locale;
+import java.util.Scanner;
+
 public class ejemplo062 {
+
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
+
         boolean bandera = true;
+        String pais;
+        String ciudad;
+        String cadenaFinal = "";
+        int salir;
 
-        while (bandera == true) { // true == true // false == true
-            System.out.println("Estoy en el ciclo"); // Estoy en el ciclo
+        while (bandera == true) {
+            System.out.println("Ingrese el nombre del país:");
+            pais = entrada.nextLine();
 
-            int salir;
-            System.out.println("Desea salir del ciclo, ingrese -100.");
-            salir = entrada.nextInt(); // 100 // -100
-            if (salir == -100) { // -100 == -100
+            System.out.println("Ingrese la ciudad capital:");
+            ciudad = entrada.nextLine();
+
+            // Se acumula el país y la ciudad en la cadena
+            cadenaFinal = String.format("%s%s - %s\n", cadenaFinal, pais, ciudad);
+
+            System.out.println("Si desea salir del ciclo, ingrese -100 (o cualquier otro número para continuar):");
+            salir = entrada.nextInt();
+            entrada.nextLine(); // Limpiar el buffer después de leer un entero
+
+            if (salir == -100) {
                 bandera = false;
             }
         }
 
+        System.out.println("\nListado de países y ciudades:");
+        System.out.println(cadenaFinal);
     }
-
-    
 }

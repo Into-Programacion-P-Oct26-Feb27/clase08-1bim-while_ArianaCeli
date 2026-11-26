@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author reroes
  */
 public class Ejemplo065 {
-    
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
@@ -21,28 +21,30 @@ public class Ejemplo065 {
         String capital;
         int poblacion;
         String reporte = "";
-        while(bandera==true){ // true == true // false == true
-            System.out.println("Ingrese un país"); 
+        while (bandera == true) { // true == true // false == true
+            System.out.println("Ingrese un país");
             pais = entrada.nextLine();
             
-            System.out.println("Ingrese un la capital del país"); 
+
+            System.out.println("Ingrese un la capital del país");
             capital = entrada.nextLine();
-            
+
             System.out.println("Ingrese la población");
             poblacion = entrada.nextInt();
-            
-            reporte = String.format("%s%s\t%s\t%d\n", reporte, pais, 
+            entrada.nextLine();
+
+            reporte = String.format("%s%s\t%s\t%d\n", reporte, pais,
                     capital, poblacion);
             String salir;
             System.out.println("Desea salir del ciclo, ingrese si.");
-            salir = entrada.nextLine(); 
-            if(salir.equals("si")){ 
+            salir = entrada.nextLine();
+            if (salir.equals("si")) {
                 bandera = false;
             }
         }
-        
+
         System.out.printf("%s\n", reporte);
-    
+
     }
 }
 /*
